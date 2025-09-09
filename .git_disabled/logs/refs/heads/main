@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 a5c93404d58cadb376ca335a581e0c97ee18a184 Ana Campos <anahifcampos@gmail.com> 1734633950 -0300	commit (initial): Primer commit - Configuración inicial y ajuste de finales de línea
+a5c93404d58cadb376ca335a581e0c97ee18a184 a5c93404d58cadb376ca335a581e0c97ee18a184 Ana Campos <anahifcampos@gmail.com> 1734634372 -0300	Branch: renamed refs/heads/master to refs/heads/main
+a5c93404d58cadb376ca335a581e0c97ee18a184 eaac80cc75c4a12351b47c74b785d67c3fdb1ef6 Ana Campos <anahifcampos@gmail.com> 1734660692 -0300	commit (merge): Merge branch 'main' of https://github.com/AnahiCampos19/ByteWise
+eaac80cc75c4a12351b47c74b785d67c3fdb1ef6 5aa802035f7d4b2cb45742d8a1cbdcfef535c4ad Ana Campos <anahifcampos@gmail.com> 1734701576 -0300	commit: Se añaden y ajustan componentes: TermsOfUse, PrivacyPolicy, EliminacionDatos, ajustes en App.jsx, y eliminación del botón Apple Login
+5aa802035f7d4b2cb45742d8a1cbdcfef535c4ad 9ada28ec43a935d00c423612d00a6be1f140fb07 Ana Campos <anahifcampos@gmail.com> 1734703170 -0300	commit: "Añadiendo componente politicas y eliminacion de datos"
+9ada28ec43a935d00c423612d00a6be1f140fb07 3b0d018bca69e439826ddcfda2dafa97e5905088 Ana Campos <anahifcampos@gmail.com> 1734704371 -0300	commit: Forzando cambios para política de privacidad y eliminación de datos
+3b0d018bca69e439826ddcfda2dafa97e5905088 bed4aa571c24c4a9e3747dd61e8694e968487524 Ana Campos <anahifcampos@gmail.com> 1734743282 -0300	commit: Agregado LoginScreen y ForgotPasswordScreen; ajustes en CSS y otros componentes
