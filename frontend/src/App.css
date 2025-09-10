@@ -6,6 +6,7 @@
   --color-fondo: #FFFDF7;            /* Marfil suave */
   --color-fondo-claro: #f7f9fa;      /* Fondo general claro */
   --color-acento: #FF6F61;           /* Coral suave */
+  --color-cards:   #FFF5F2;           /*Coral suave suave*/
   --color-texto: #333333;            /* Gris grafito */
   --color-borde: #E0E0E0;            /* Gris claro */
   --color-fondo-oscuro: #004D40;     /* Azul petróleo */
@@ -65,48 +66,6 @@ main {
   flex-direction: column;
 }
 
-/* =================== NAVBAR Y FOOTER =================== */
-.navbar {
-  background: var(--color-secundario);
-  color: var(--color-texto-claro);
-  padding: 1rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.footer {
-  background-color: var(--color-fondo-oscuro);
-  color: var(--color-texto-claro);
-  text-align: center;
-  padding: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  width: 100%;
-}
-.footer a {
-  color: var(--color-acento);
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-.footer a:hover {
-  text-decoration: underline;
-}
-.social-icons {
-  display: flex;
-  justify-content: center;
-}
-.social-icons a {
-  margin: 0 0.5rem;
-  font-size: 1.5rem;
-  color: var(--color-primario);
-}
-.social-icons a:hover {
-  color: var(--color-acento);
-}
-
 /* =================== BOTONES =================== */
 button,
 .btn-primary,
@@ -119,7 +78,7 @@ button.btn-primary {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
   font-weight: 600;
 }
 button:hover:enabled,
@@ -144,7 +103,7 @@ button.btn-secondary {
   font-size: 1rem;
   box-shadow: 0 2px 8px 0 rgba(255,111,97,0.08);
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
   display: inline-block;
   cursor: pointer;
 }
@@ -227,34 +186,6 @@ p, li {
 }
 .forgot-password p .link:hover {
   text-decoration: underline;
-}
-
-/* =================== HOME Y CARDS =================== */
-.home-container {
-  text-align: center;
-  padding: 20px;
-}
-.home-options {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 2rem;
-  gap: 15rem;
-}
-.option-card {
-  border: 1px solid var(--color-borde);
-  padding: 1.5rem;
-  width: 300px;
-  max-width: 100%;
-  border-radius: 10px;
-  text-align: center;
-  background-color: var(--color-fondo);
-}
-.option-card h3 {
-  margin-bottom: 15px;
-}
-.option-card p {
-  margin-bottom: 20px;
 }
 
 /* =================== COMPONENTES DASHBOARD =================== */
