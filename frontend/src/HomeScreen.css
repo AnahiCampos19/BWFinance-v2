@@ -1,71 +1,72 @@
 /* HomeScreen.css */
-
+ 
 .home-container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1rem;
   text-align: center;
 }
-
+ 
 .home-container h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   color: var(--clr-primary, #388e3c);
 }
-
+ 
 .home-container p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
   color: #333;
 }
-
+ 
 .home-options {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: stretch;
+  gap: 2rem;
   margin: 0 auto;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1100px;
 }
-
-.option-card {
-  background: #e8f5e9;
-  border: 1.5px solid #43a047;
+ 
+.home-option-card {
+  background-color: var(--color-cards,#FFF5F2 );         /*Coral suave suave*/
+  border: 1.5px solid #4CAF50;
   border-radius: 12px;
   box-shadow: 0 4px 16px #0001;
-  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  padding: 1.2rem 0.8rem 1rem 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s, box-shadow 0.2s;
-  min-width: 220px;
-  max-width: 320px;
+  width: 30%;
+  box-sizing: border-box;
 }
 
-.option-card:hover {
+.home-option-card:hover {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 8px 24px #0002;
 }
-
+ 
 .option-icon {
   font-size: 2.8rem;
   margin-bottom: 0.7rem;
   display: block;
 }
-
-.option-card h3 {
+ 
+.home-option-card h3 {
   margin: 0.2rem 0 0.7rem 0;
   color: #2e7d32;
   font-size: 1.3rem;
 }
 
-.option-card p {
+.home-option-card p {
   color: #444;
   font-size: 1rem;
   margin-bottom: 1.2rem;
 }
-
+ 
 .btn-primary {
   display: inline-block;
   background: linear-gradient(90deg, #43a047 60%, #66bb6a 100%);
@@ -80,31 +81,38 @@
   box-shadow: 0 2px 8px #0001;
   transition: background 0.2s, transform 0.2s;
 }
-
+ 
 .btn-primary:hover,
 .btn-primary:active {
   background: var(--color-acento, #FF6F61);
   color: #fff;
   transform: scale(1.05);
 }
-
+ 
 /* Responsive: 2 columnas en tablet */
 @media (max-width: 900px) {
   .home-options {
-    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    max-width: 700px;
+  }
+  .home-option-card {
+    width: 45%;
+    min-width: 180px;
+    box-sizing: border-box;
   }
 }
 
 /* Responsive: 1 columna en mobile */
 @media (max-width: 600px) {
   .home-options {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
+    max-width: 98vw;
   }
-  .option-card {
+  .home-option-card {
+    width: 98%;
     min-width: 0;
-    width: 100%;
-    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    box-sizing: border-box;
   }
 }
