@@ -3,12 +3,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../HomeScreen.css';
 
+import WeatherInfo from './WeatherInfo';
+
 function HomeScreen({ user }) {
     return (
         <div className="home-container">
-            <h1>Bienvenido, {user.name}, a ByteWise</h1>
-            <p>¿Qué te gustaría hacer hoy?</p>
-
+            <div style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
+                gap: "1rem",
+                flexWrap: "wrap"
+            }}>
+                <div>
+                    <h1>Bienvenido, {user.name}, a ByteWise</h1>
+                    <p>¿Qué te gustaría hacer hoy?</p>
+                </div>
+                <div style={{ minWidth: "220px", maxWidth: "320px" }}>
+                    <WeatherInfo />
+                </div>
+            </div>
             <div className="home-options">
                 <div className="home-option-card">
                     <span className="option-icon" role="img" aria-label="Dashboard">📊</span>
