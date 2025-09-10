@@ -28,11 +28,12 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
   
 
 body {
-height: 100%;
-margin: 0;
-display: flex;
-flex-direction: column;
-
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
 }
 
 main {
@@ -44,6 +45,26 @@ main {
   max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
+}
+
+/* Botón base global con paleta */
+button {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover:enabled {
+  background-color: var(--color-secundario);
+}
+button:disabled {
+  background-color: var(--color-borde);
+  color: var(--color-texto-gris);
+  cursor: not-allowed;
 }
 
 
@@ -93,15 +114,15 @@ font-family: Arial, sans-serif;
   padding: 0.75rem;
   margin: 0.5rem 0;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-borde);
   font-size: 1rem;
 }
 
 .register-form .submit-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: green;
-  color: #fff;
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
   border: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -109,7 +130,7 @@ font-family: Arial, sans-serif;
 }
 
 .register-form .submit-btn:hover {
-  background-color:rgb(115, 216, 115) ;
+  background-color: var(--color-secundario);
 }
 
 /* Contenedor principal del inicio de sesión */
@@ -127,15 +148,15 @@ font-family: Arial, sans-serif;
   padding: 0.75rem;
   margin: 0.5rem 0;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-borde);
   font-size: 1rem;
 }
 
 .login-form .submit-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: green;
-  color: #fff;
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
   border: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -143,7 +164,7 @@ font-family: Arial, sans-serif;
 }
 
 .login-form .submit-btn:hover {
-  background-color:rgb(115, 216, 115) ;
+  background-color: var(--color-secundario);
 }
 
 /* Estilo del enlace de "¿Olvidaste tu contraseña?" */
@@ -162,7 +183,7 @@ font-family: Arial, sans-serif;
   padding: 0.75rem;
   margin: 0.5rem 0;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-borde);
   font-size: 1rem;
 }
 
@@ -171,8 +192,8 @@ font-family: Arial, sans-serif;
   width: 100%; 
   padding: 0.75rem; 
   margin-top: 1rem; 
-  background-color: green; 
-  color: white; 
+  background-color: var(--color-primario); 
+  color: var(--color-texto-claro); 
   border: none; 
   border-radius: 5px; 
   font-size: 1rem; 
@@ -180,7 +201,7 @@ font-family: Arial, sans-serif;
 }
 
 .forgot-password-form .submit-btn:hover {
-  background-color: rgb(115, 216, 115); 
+  background-color: var(--color-secundario); 
 }
 
 
@@ -202,9 +223,16 @@ font-family: Arial, sans-serif;
 
 
 :root {
---clr-primary: #121212 !important;
---clr-secondary: #f2f2f2 !important;
---clr-accent: green !important;
+  /* Paleta fresca e innovadora basada en el logo verde */
+  --color-primario: #4CAF50;         /* Verde lima */
+  --color-secundario: #1CA6B8;       /* Celeste navbar (teal de la imagen) */
+  --color-fondo: #FFFDF7;            /* Marfil suave */
+  --color-acento: #FF6F61;           /* Coral suave */
+  --color-texto: #333333;            /* Gris grafito */
+  --color-borde: #E0E0E0;            /* Gris claro */
+  --color-fondo-oscuro: #004D40;     /* Azul petróleo */
+  --color-texto-claro: #fff;         /* Blanco */
+  --color-texto-gris: #bdbdbd;       /* Gris medio */
 }
 
 
@@ -255,13 +283,13 @@ gap: 15rem;
 }
 
 .option-card {
-border: 1px solid #ccc;
-padding: 1.5rem;
-width: 300px;
-max-width: 100%;
-border-radius: 10px;
-text-align: center;
-background-color:#f9f9f9 ;
+  border: 1px solid var(--color-borde);
+  padding: 1.5rem;
+  width: 300px;
+  max-width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: var(--color-fondo);
 }
 
 .option-card h3 {
@@ -272,13 +300,56 @@ margin-bottom: 15px;
 margin-bottom: 20px;
 }
 
-.btn-primary {
-background-color: #007bff;
-color: white;
-padding: 10px;
-border: none;
-border-radius: 5px;
-text-decoration: none;
+.btn-primary,
+a.btn-primary,
+button.btn-primary {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(76,175,80,0.08);
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-primary:hover,
+a.btn-primary:hover,
+button.btn-primary:hover,
+.btn-primary:active,
+a.btn-primary:active,
+button.btn-primary:active {
+  background-color: var(--color-acento); /* Coral suave en hover/active */
+  color: var(--color-texto-claro);
+}
+
+.btn-secondary,
+a.btn-secondary,
+button.btn-secondary {
+  background-color: var(--color-acento);
+  color: var(--color-texto-claro);
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(255,111,97,0.08);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-secondary:hover,
+a.btn-secondary:hover,
+button.btn-secondary:hover,
+.btn-secondary:active,
+a.btn-secondary:active,
+button.btn-secondary:active {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
 }
 /************************************************************************/
 

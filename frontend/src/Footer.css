@@ -1,6 +1,6 @@
 .footer{
-  background-color: var(--clr-primary);
-  color: var(--clr-secondary);
+  background-color: var(--color-fondo-oscuro);
+  color: var(--color-texto-claro);
   text-align: center;
   padding: 1rem 0;
   display: flex;
@@ -22,7 +22,7 @@
 }
 
 .footer a {
-  color: var(--clr-accent);
+  color: var(--color-acento);
   text-decoration: none;
   margin: 0 0.5rem;
 }
@@ -41,11 +41,11 @@
 .social-icons a {
   margin: 0 0.5rem;
   font-size: 1.5rem;
-  color: var(--clr-secondary);
+  color: var(--color-primario);
 }
 
 .social-icons a:hover {
-  color: var(--clr-accent);
+  color: var(--color-acento);
 }
 
 
@@ -66,5 +66,3 @@
     font-size: 1.2rem; 
   }
 }
-
-  

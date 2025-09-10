@@ -46,10 +46,10 @@ function TareasHabitos() {
                         <span style={{ textDecoration: tarea.completada ? 'line-through' : 'none' }}>
                             {tarea.descripcion}
                         </span>
-                        <button onClick={() => toggleCompletada(tarea.id)}>
+                        <button className="btn-secondary" onClick={() => toggleCompletada(tarea.id)}>
                             {tarea.completada ? 'Desmarcar' : 'Completar'}
                         </button>
-                        <button onClick={() => eliminarTarea(tarea.id)}>Eliminar</button>
+                        <button className="btn-secondary" onClick={() => eliminarTarea(tarea.id)}>Eliminar</button>
                     </li>
                 ))}
             </ul>
@@ -63,7 +63,7 @@ function TareasHabitos() {
                     onChange={(e) => setNuevaTarea(e.target.value)} 
                     required 
                 />
-                <button type="submit">Agregar</button>
+                <button type="submit" className="btn-primary">Agregar</button>
             </form>
         </div>
     );

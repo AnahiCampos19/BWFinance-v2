@@ -112,7 +112,7 @@ function MetasPresupuestos() {
                     </select>
                 )}
 
-                <button type="submit">Agregar Meta</button>
+                <button type="submit" className="btn-primary">Agregar Meta</button>
             </form>
 
             {/* Mensaje de error */}
@@ -125,8 +125,8 @@ function MetasPresupuestos() {
                     {filtrarPorCategoria('Gastos Fijos').map(meta => (
                         <li key={meta.id}>
                             {meta.nombre} - ${meta.monto} ({meta.periodo})
-                            <button onClick={() => toggleMetaCompletada(meta.id)}>Completar</button>
-                            <button onClick={() => eliminarMeta(meta.id)}>Eliminar</button>
+                            <button className="btn-secondary" onClick={() => toggleMetaCompletada(meta.id)}>Completar</button>
+                            <button className="btn-secondary" onClick={() => eliminarMeta(meta.id)}>Eliminar</button>
                         </li>
                     ))}
                 </ul>
@@ -138,8 +138,8 @@ function MetasPresupuestos() {
                     {filtrarPorCategoria('Gastos de Dispersión').map(meta => (
                         <li key={meta.id}>
                             {meta.nombre} - ${meta.monto} ({meta.periodo})
-                            <button onClick={() => toggleMetaCompletada(meta.id)}>Completar</button>
-                            <button onClick={() => eliminarMeta(meta.id)}>Eliminar</button>
+                            <button className="btn-secondary" onClick={() => toggleMetaCompletada(meta.id)}>Completar</button>
+                            <button className="btn-secondary" onClick={() => eliminarMeta(meta.id)}>Eliminar</button>
                         </li>
                     ))}
                 </ul>
@@ -151,8 +151,8 @@ function MetasPresupuestos() {
                     {filtrarPorCategoria('Inversiones a Futuro').map(meta => (
                         <li key={meta.id}>
                             {meta.nombre} - ${meta.monto} (En {meta.tiempo})
-                            <button onClick={() => toggleMetaCompletada(meta.id)}>Completar</button>
-                            <button onClick={() => eliminarMeta(meta.id)}>Eliminar</button>
+                            <button className="btn-secondary" onClick={() => toggleMetaCompletada(meta.id)}>Completar</button>
+                            <button className="btn-secondary" onClick={() => eliminarMeta(meta.id)}>Eliminar</button>
                         </li>
                     ))}
                 </ul>
@@ -162,4 +162,3 @@ function MetasPresupuestos() {
 }
 
 export default MetasPresupuestos;
-

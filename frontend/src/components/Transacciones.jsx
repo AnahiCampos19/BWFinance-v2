@@ -39,7 +39,7 @@ function Transacciones() {
                 {transacciones.map(transaccion => (
                     <li key={transaccion.id}>
                         {transaccion.descripcion} - ${transaccion.monto}
-                        <button onClick={() => eliminarTransaccion(transaccion.id)}>Eliminar</button>
+                        <button className="btn-secondary" onClick={() => eliminarTransaccion(transaccion.id)}>Eliminar</button>
                     </li>
                 ))}
             </ul>
@@ -60,7 +60,7 @@ function Transacciones() {
                     onChange={(e) => setNuevoMonto(e.target.value)} 
                     required 
                 />
-                <button type="submit">Agregar</button>
+                <button type="submit" className="btn-primary">Agregar</button>
             </form>
         </div>
     );

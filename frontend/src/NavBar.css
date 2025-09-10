@@ -5,11 +5,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--clr-primary); /* Color del fondo */
-  color: var(--clr-secondary); /* Color del texto */
+  background-color: var(--color-secundario); /* Color del fondo navbar (celeste/teal) */
+  color: var(--color-texto-claro); /* Color del texto */
   position: relative;
   z-index: 10;
-  border-bottom: 0.5rem solid var(--clr-secondary);
+  border-bottom: 0.5rem solid var(--color-borde);
 }
 
 nav{
@@ -21,7 +21,7 @@ nav{
   width: 100%; /* Asegura que ocupe todo el ancho */
   display: flex;
   align-items: center;
-  background-color: var(--clr-primary);
+  background-color: var(--color-secundario); /* Color del fondo navbar (celeste/teal) */
   padding: 0.5rem 1rem;
 }
 
@@ -48,19 +48,19 @@ nav{
 
 .menu li a {
   text-decoration: none;
-  color: var(--clr-secondary);
+  color: var(--color-texto-claro);
   padding: 0.5rem 1rem; /* Espacio interno para cada enlace */
   display: block; /* Garantiza el área clickeable */
 }
 
 .menu li a:hover {
-  color: var(--clr-accent);
+  color: var(--color-acento);
 }
 
 .btn-menu {
   background: none;
   border: none;
-  color: var(--clr-secondary);
+  color: var(--color-texto-claro);
   font-size: 1.8rem;
   cursor: pointer;
   display: none; /* Ocultar en desktop */
@@ -79,9 +79,9 @@ nav{
     top: 100%; /* Justo debajo del header */
     left: 0; /* Alineado al borde izquierdo */
     width: 100%; /* Ocupa todo el ancho */
-    background-color: var(--clr-primary);
+    background-color: var(--color-secundario);
     z-index: 999;
-    border-top: 1px solid var(--clr-secondary);
+    border-top: 1px solid var(--color-borde);
   }
   .menu ul{
     width: 100%;

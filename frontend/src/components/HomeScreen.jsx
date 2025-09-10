@@ -11,19 +11,19 @@ function HomeScreen({ user }) {
                 <div className="option-card">
                     <h3>Dashboard</h3>
                     <p>Visualiza un resumen de tu situación financiera.</p>
-                    <Link to="/dashboard" className="btn btn-primary">Ir al Dashboard</Link>
+                    <Link to="/dashboard" className="btn-primary">Ir al Dashboard</Link>
                 </div>
 
                 <div className="option-card">
                     <h3>Gestión de Transacciones</h3>
                     <p>Administra tus ingresos y gastos.</p>
-                    <Link to="/transacciones" className="btn btn-primary">Gestionar Transacciones</Link>
+                    <Link to="/transacciones" className="btn-primary">Gestionar Transacciones</Link>
                 </div>
 
                 <div className="option-card">
                     <h3>Gestión de Tareas y Hábitos</h3>
                     <p>Organiza tus tareas y hábitos financieros.</p>
-                    <Link to="/tareas-habitos" className="btn btn-primary">Gestionar Tareas y Hábitos</Link>
+                    <Link to="/tareas-habitos" className="btn-primary">Gestionar Tareas y Hábitos</Link>
                 </div>
             </div>
         </div>
