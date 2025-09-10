@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import WeatherInfo from './WeatherInfo';
 
 function Transacciones() {
     // Estado inicial con algunas transacciones de ejemplo
@@ -31,37 +32,49 @@ function Transacciones() {
     };
 
     return (
-        <div>
-            <h1>Gestión de Transacciones</h1>
-            
-            <h3>Listado de Transacciones</h3>
-            <ul>
-                {transacciones.map(transaccion => (
-                    <li key={transaccion.id}>
-                        {transaccion.descripcion} - ${transaccion.monto}
-                        <button className="btn-secondary" onClick={() => eliminarTransaccion(transaccion.id)}>Eliminar</button>
-                    </li>
-                ))}
-            </ul>
+        <div className="transacciones-main-layout">
+            <div style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
+                gap: "1rem",
+                flexWrap: "wrap"
+            }}>
+                <h1>Gestión de Transacciones</h1>
+                <div style={{ minWidth: "220px", maxWidth: "320px" }}>
+                    <WeatherInfo />
+                </div>
+            </div>
+            <div className="transacciones-container">
+                <h3>Listado de Transacciones</h3>
+                <ul>
+                    {transacciones.map(transaccion => (
+                        <li key={transaccion.id}>
+                            {transaccion.descripcion} - ${transaccion.monto}
+                            <button className="btn-secondary" onClick={() => eliminarTransaccion(transaccion.id)}>Eliminar</button>
+                        </li>
+                    ))}
+                </ul>
 
-            <h3>Agregar Nueva Transacción</h3>
-            <form onSubmit={agregarTransaccion}>
-                <input 
-                    type="text" 
-                    placeholder="Descripción" 
-                    value={nuevaDescripcion} 
-                    onChange={(e) => setNuevaDescripcion(e.target.value)} 
-                    required 
-                />
-                <input 
-                    type="number" 
-                    placeholder="Monto" 
-                    value={nuevoMonto} 
-                    onChange={(e) => setNuevoMonto(e.target.value)} 
-                    required 
-                />
-                <button type="submit" className="btn-primary">Agregar</button>
-            </form>
+                <h3>Agregar Nueva Transacción</h3>
+                <form onSubmit={agregarTransaccion}>
+                    <input 
+                        type="text" 
+                        placeholder="Descripción" 
+                        value={nuevaDescripcion} 
+                        onChange={(e) => setNuevaDescripcion(e.target.value)} 
+                        required 
+                    />
+                    <input 
+                        type="number" 
+                        placeholder="Monto" 
+                        value={nuevoMonto} 
+                        onChange={(e) => setNuevoMonto(e.target.value)} 
+                        required 
+                    />
+                    <button type="submit" className="btn-primary">Agregar</button>
+                </form>
+            </div>
         </div>
     );
 }

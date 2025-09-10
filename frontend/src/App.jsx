@@ -15,7 +15,8 @@ import ForgotPasswordScreen from "./components/ForgotPasswordScreen";
 import LoginScreen from "./components/LoginScreen";
 import './App.css';
 
-
+import WeatherInfo from './components/WeatherInfo';
+import { useLocation } from 'react-router-dom';
 
 // Importa Navbar y Footer
 import { Navbar } from './components/Navbar';
@@ -23,31 +24,36 @@ import Footer from './components/Footer';
 
 function App() {
   const ERROR_MESSAGE = "¡UPS! Esa página no existe...";
+  const location = useLocation();
 
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomeScreen user={{ name: "Pao" }} />} />
-            <Route path="/register" element={<RegisterScreen />} />
-            <Route path="/login" element={<LoginScreen />} />
-            <Route path="/termsofuse" element={<TermsOfUse />} />
-            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-            <Route path="/precontractualesterms" element={<PrecontractualesTerms />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/transacciones" element={<Transacciones />} />
-            <Route path="/tareas-habitos" element={<TareasHabitos />} />
-            <Route path="/eliminaciondatos" element={<EliminacionDatos />} />
-            <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
-            <Route path="*" element={<h2>{ERROR_MESSAGE}</h2>} />
-          </Routes>
-        </main>
-        <Footer />
-      </BrowserRouter>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomeScreen user={{ name: "Pao" }} />} />
+          <Route path="/register" element={<RegisterScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/termsofuse" element={<TermsOfUse />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/precontractualesterms" element={<PrecontractualesTerms />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/transacciones" element={<Transacciones />} />
+          <Route path="/tareas-habitos" element={<TareasHabitos />} />
+          <Route path="/eliminaciondatos" element={<EliminacionDatos />} />
+          <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
+          <Route path="*" element={<h2>{ERROR_MESSAGE}</h2>} />
+        </Routes>
+      </main>
+      <Footer />
     </>
   );
 }
 
-export default App;
+export default function AppWithRouter() {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}
