@@ -3,6 +3,14 @@ import FacebookLogin from "react-facebook-login-lite";
 import GoogleLoginButton from "./GoogleLoginButton"; // Reutilizamos el componente de Google Login
 import SimulatedAppleLoginButton from "./SimulatedAppleLoginButton";
 
+function validateEmail(email) {
+    if (!email) return "El correo es obligatorio.";
+    // Expresión regular básica para validar email
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!re.test(email)) return "El correo no es válido.";
+    return null;
+}
+
 function LoginScreen() {
     const [formValues, setFormValues] = useState({
         email: "",
@@ -36,7 +44,7 @@ function LoginScreen() {
         if (Object.keys(errors).length === 0) {
             setIsSubmitting(true);
             try {
-                const response = await fetch("http://localhost:5000/api/auth/login", {   
+                const response = await fetch("http://localhost:5001/api/users/login", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(formValues),

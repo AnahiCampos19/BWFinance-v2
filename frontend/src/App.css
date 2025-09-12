@@ -1,3 +1,26 @@
+.facebook-btn {
+  background-color: #4267B2 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 10px 16px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: background 0.2s;
+}
+.facebook-btn:hover {
+  background-color: #365899 !important;
+}
+.facebook-btn svg, .facebook-btn img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
 /* =================== RESET Y BASE =================== */
 :root {
   /* Paleta fresca e innovadora basada en el logo verde */
