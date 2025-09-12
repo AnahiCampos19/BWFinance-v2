@@ -37,23 +37,20 @@ function TareasHabitos() {
     };
 
     return (
-        <div style={{ display: "flex", gap: "2rem", alignItems: "flex-start" }}>
-            {/* Columna izquierda simulada */}
-            <aside style={{
-                minWidth: "260px",
-                maxWidth: "320px",
-                background: "#f0f8ff",
-                borderRadius: "8px",
-                padding: "1rem",
-                textAlign: "center",
-                boxShadow: "0 2px 8px #0001"
+        <div className="tareas-habitos-main-layout">
+            <div style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
+                gap: "1rem",
+                flexWrap: "wrap"
             }}>
-                <WeatherInfo />
-            </aside>
-            {/* Columna central */}
-            <div style={{ flex: 1 }}>
                 <h1>Gestión de Tareas y Hábitos</h1>
-
+                <div style={{ minWidth: "220px", maxWidth: "320px" }}>
+                    <WeatherInfo />
+                </div>
+            </div>
+            <div className="tareas-habitos-container">
                 <h3>Lista de Tareas</h3>
                 <ul>
                     {tareas.map(tarea => (

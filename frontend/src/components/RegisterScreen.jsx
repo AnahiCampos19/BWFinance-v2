@@ -5,6 +5,7 @@ import SimulatedAppleLoginButton from "./SimulatedAppleLoginButton";
 
 function RegisterScreen() {
     const [formValues, setFormValues] = useState({
+        name: "",
         email: "",
         password: "",
         confirmPassword: "",
@@ -20,6 +21,10 @@ function RegisterScreen() {
 
     const validate = () => {
         const errors = {};
+
+        if (!formValues.name) {
+            errors.name = "El nombre es obligatorio.";
+        }
 
         if (!formValues.email) {
             errors.email = "El correo electrónico es obligatorio.";
@@ -51,6 +56,7 @@ function RegisterScreen() {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
+                        name: formValues.name,
                         email: formValues.email,
                         password: formValues.password,
                     }),
@@ -58,7 +64,7 @@ function RegisterScreen() {
     
                 if (response.ok) {
                     alert("Registro exitoso");
-                    setFormValues({ email: "", password: "", confirmPassword: "" }); // Resetea formulario
+                    setFormValues({ name: "", email: "", password: "", confirmPassword: "" }); // Resetea formulario
                 } else {
                     const data = await response.json();
                     if (response.status === 409) {
@@ -97,6 +103,15 @@ function RegisterScreen() {
         <div className="register-container">
             <h3>Regístrate en ByteWise</h3>
             <form className="register-form" onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Nombre completo"
+                    value={formValues.name}
+                    onChange={handleChange}
+                />
+                {formErrors.name && <p className="error">{formErrors.name}</p>}
+
                 <input
                     type="email"
                     name="email"
