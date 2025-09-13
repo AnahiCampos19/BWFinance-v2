@@ -53,6 +53,10 @@ function LoginScreen() {
                 if (response.ok) {
                     alert("Inicio de sesión exitoso");
                     setFormValues({ email: "", password: "" });
+                } else if (response.status === 404) {
+                    setFormErrors({
+                        email: "El usuario no está registrado.",
+                    });
                 } else if (response.status === 401) {
                     setFormErrors({
                         email: "Correo o contraseña incorrectos.",
