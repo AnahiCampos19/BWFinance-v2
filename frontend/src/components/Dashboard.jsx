@@ -12,7 +12,7 @@ function Dashboard() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/dolar')
+        fetch('http://localhost:5001/api/dolar')
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
