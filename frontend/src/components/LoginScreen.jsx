@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FacebookLogin from "react-facebook-login-lite";
 import GoogleLoginButton from "./GoogleLoginButton"; // Reutilizamos el componente de Google Login
 import SimulatedAppleLoginButton from "./SimulatedAppleLoginButton";
@@ -18,6 +19,7 @@ function LoginScreen() {
     });
     const [formErrors, setFormErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -51,8 +53,17 @@ function LoginScreen() {
                 });
 
                 if (response.ok) {
-                    alert("Inicio de sesión exitoso");
-                    setFormValues({ email: "", password: "" });
+                    const data = await response.json();
+                    console.log("Respuesta del backend al login:", data);
+                    // Guardar nombre y email en localStorage
+                    function capitalizeWords(str) {
+                        return str.replace(/\b\w/g, c => c.toUpperCase());
+                    }
+                    const formattedName = capitalizeWords(data.user?.name || "");
+                    localStorage.setItem("userName", formattedName);
+                    localStorage.setItem("userEmail", data.user?.email || "");
+                    // Redirigir al inicio
+                    navigate("/");
                 } else if (response.status === 404) {
                     setFormErrors({
                         email: "El usuario no está registrado.",
