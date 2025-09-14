@@ -6,6 +6,9 @@ import '../HomeScreen.css';
 import WeatherInfo from './WeatherInfo';
 
 function HomeScreen({ user }) {
+    // Si no se pasa el prop user, leer de localStorage
+    const userName = user?.name || localStorage.getItem("userName") || "Usuario";
+
     return (
         <div className="home-container">
             <div style={{
@@ -16,7 +19,7 @@ function HomeScreen({ user }) {
                 flexWrap: "wrap"
             }}>
                 <div>
-                    <h1>Bienvenido, {user.name}, a ByteWise</h1>
+                    <h1>Bienvenido, {userName}, a ByteWise</h1>
                     <p>¿Qué te gustaría hacer hoy?</p>
                 </div>
                 <div style={{ minWidth: "220px", maxWidth: "320px" }}>

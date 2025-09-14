@@ -54,8 +54,13 @@ function LoginScreen() {
 
                 if (response.ok) {
                     const data = await response.json();
+                    console.log("Respuesta del backend al login:", data);
                     // Guardar nombre y email en localStorage
-                    localStorage.setItem("userName", data.user?.name || "");
+                    function capitalizeWords(str) {
+                        return str.replace(/\b\w/g, c => c.toUpperCase());
+                    }
+                    const formattedName = capitalizeWords(data.user?.name || "");
+                    localStorage.setItem("userName", formattedName);
                     localStorage.setItem("userEmail", data.user?.email || "");
                     // Redirigir al inicio
                     navigate("/");

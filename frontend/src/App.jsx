@@ -31,7 +31,7 @@ function App() {
       <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<HomeScreen user={{ name: "Pao" }} />} />
+          <Route path="/" element={<HomeScreen />} />
           <Route path="/register" element={<RegisterScreen />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/termsofuse" element={<TermsOfUse />} />
