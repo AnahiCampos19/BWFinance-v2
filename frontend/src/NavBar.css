@@ -21,7 +21,8 @@ header {
 }
 
 nav{
-  width:100vh;
+  width: auto;
+  flex: 1;
   display: flex;
   justify-content: space-between;
 }
@@ -42,6 +43,10 @@ nav{
 .custom-svg .st2 { fill: #ECEFF1 !important; }
 
 .menu {
+  
+  flex: 1;
+  justify-content: space-between;
+  /*overflow-x: auto; Opcional si hay muchos ítems */
   display: flex;
   gap: 1rem; /* Espacio entre elementos */
   align-items: center;
@@ -49,6 +54,7 @@ nav{
 
 .menu ul {
   display: flex;
+  flex-wrap: nowrap;
   list-style: none; /* Elimina los estilos de lista */
   padding: 0; /* Elimina padding */
   margin: 0; /* Elimina margen */
@@ -59,6 +65,34 @@ nav{
   color: var(--color-texto-claro);
   padding: 0.5rem 1rem; /* Espacio interno para cada enlace */
   display: block; /* Garantiza el área clickeable */
+}
+
+.logout-btn {
+  background: #43b02a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px #0001;
+  display: block;
+}
+
+.logout-btn:hover {
+  background: #388e1b;
+}
+
+.navbar-username {
+  margin-left: 0.5rem;
+  font-weight: 500;
+  color: var(--color-texto-claro);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .menu li a:hover {

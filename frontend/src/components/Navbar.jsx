@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../img/color-bw-03.svg";
 import "../NavBar.css";
 
@@ -7,49 +7,94 @@ import "../NavBar.css";
 export const Navbar = () => {
   // Estado local para manejar si el menú está abierto o cerrado
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const navigate = useNavigate();
+
+  // Obtener nombre de usuario de localStorage
+  const userName = localStorage.getItem("userName");
 
   // Función para alternar el estado del menú (abrir/cerrar)
   const toggleMenu = () => {
     setMenuAbierto(!menuAbierto);
   };
 
+  // Función para cerrar sesión
+  const handleLogout = () => {
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userEmail");
+    // Borra otros datos de sesión si los hubiera
+    navigate("/login");
+  };
+
   return (
-    <header className="navbar"> {/* Contenedor principal de la barra de navegación */}
-      {/* Logo de la aplicación */}
+    <header className="navbar">
       <img src={logo} alt="Logo ByteWise" className="logo" />
 
-      {/* Botón del menú hamburguesa para dispositivos móviles */}
       <button
         className="btn-menu"
-        onClick={toggleMenu} // Maneja el clic para abrir/cerrar menú
-        aria-expanded={menuAbierto} // Propiedad accesible para indicar estado del menú
+        onClick={toggleMenu}
+        aria-expanded={menuAbierto}
         aria-label="Abrir menú de navegación"
       >
-        {menuAbierto ? "✖" : "☰"} {/* Cambia entre 'X' y '☰' (hamburguesa) */}
+        {menuAbierto ? "✖" : "☰"}
       </button>
 
-      {/* Menú de enlaces */}
       <nav className={`menu ${menuAbierto ? "menu-abierto" : ""}`}>
-        <ul>
-          <li>
-            <Link to="/">Inicio</Link> {/* Enlace a la página principal */}
-          </li>
-          <li>
-            <Link to="/register">Registrarse</Link> {/* Enlace a la página de registro */}
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link> {/* Enlace al dashboard */}
-          </li>
-          <li>
-            <Link to="/transacciones">Transacciones</Link> {/* Enlace a transacciones */}
-          </li>
-          <li>
-            <Link to="/tareas-habitos">Hábitos</Link> {/* Enlace a tareas y hábitos */}
-          </li>
-        </ul>
+        <div className="menu-left">
+          <ul>
+            <li>
+              <Link to="/">Inicio</Link>
+            </li>
+            {!userName && (
+              <>
+                <li>
+                  <Link to="/register">Registrarse</Link>
+                </li>
+                <li>
+                  <Link to="/login">Iniciar sesión</Link>
+                </li>
+              </>
+            )}
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li>
+              <Link to="/transacciones">Transacciones</Link>
+            </li>
+            <li>
+              <Link to="/tareas-habitos">Hábitos</Link>
+            </li>
+          </ul>
+        </div>
+        {userName && (
+          <div className="menu-right">
+            <ul>
+              <li className="navbar-user-dropdown">
+                <button
+                  className="navbar-username"
+                  onClick={() => setMenuAbierto(menuAbierto === "user" ? false : "user")}
+                  style={{ background: "none", border: "none", color: "inherit", cursor: "pointer", display: "flex", alignItems: "center", fontWeight: 500, fontSize: "1rem" }}
+                >
+                  👤 {userName}
+                </button>
+                {menuAbierto === "user" && (
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link to="/perfil" onClick={() => setMenuAbierto(false)}>
+                        Configuración
+                      </Link>
+                    </li>
+                    <li>
+                      <button className="logout-btn" onClick={handleLogout}>
+                        Cerrar sesión
+                      </button>
+                    </li>
+                  </ul>
+                )}
+              </li>
+            </ul>
+          </div>
+        )}
       </nav>
     </header>
   );
 };
-
-
