@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      {location.pathname !== "/login" && location.pathname !== "/register" && location.pathname !== "/forgot-password" && <Navbar />}
       <main>
         <Routes>
           <Route path="/" element={<HomeScreen />} />
