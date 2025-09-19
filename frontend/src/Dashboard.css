@@ -148,7 +148,7 @@ form button:hover {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    /*border-bottom: 1px solid #ddd;*/
     }
     
     button {
@@ -179,8 +179,6 @@ form button:hover {
     h1, h2 {
     color: #333; /* Color de los títulos */
     }
-    
-
 
 
 

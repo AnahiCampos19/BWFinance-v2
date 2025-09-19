@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FiLogOut, FiUser } from "react-icons/fi";
 import logo from "../img/color-bw-03.svg";
 import "../NavBar.css";
 
@@ -7,6 +8,7 @@ import "../NavBar.css";
 export const Navbar = () => {
   // Estado local para manejar si el menú está abierto o cerrado
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const [usuarioMenuAbierto, setUsuarioMenuAbierto] = useState(false);
   const navigate = useNavigate();
 
   // Obtener nombre de usuario de localStorage
@@ -74,7 +76,8 @@ export const Navbar = () => {
                   onClick={() => setMenuAbierto(menuAbierto === "user" ? false : "user")}
                   style={{ background: "none", border: "none", color: "inherit", cursor: "pointer", display: "flex", alignItems: "center", fontWeight: 500, fontSize: "1rem" }}
                 >
-                  👤 {userName}
+                  <FiUser style={{ marginRight: "0.5rem", verticalAlign: "middle" }} />
+                  {userName}
                 </button>
                 {menuAbierto === "user" && (
                   <ul className="dropdown-menu">
@@ -85,7 +88,7 @@ export const Navbar = () => {
                     </li>
                     <li>
                       <button className="logout-btn" onClick={handleLogout}>
-                        Cerrar sesión
+                        <FiLogOut style={{ marginRight: "0.5rem", verticalAlign: "middle" }} />
                       </button>
                     </li>
                   </ul>

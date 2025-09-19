@@ -17,7 +17,7 @@ header {
   color: var(--color-texto-claro); /* Color del texto */
   position: relative;
   z-index: 10;
-  border-bottom: 0.5rem solid var(--color-borde);
+  /*border-bottom: 0.5rem solid var(--color-borde);*/
 }
 
 nav{
@@ -75,7 +75,7 @@ nav{
   padding: 0.5rem 1.2rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
   margin-left: 0.5rem;
   font-size: 1rem;
   box-shadow: 0 2px 6px #0001;
@@ -107,6 +107,39 @@ nav{
   cursor: pointer;
   display: none; /* Ocultar en desktop */
 }
+
+/* CONTENEDOR DEL USUARIO */
+.navbar-user-dropdown {
+  position: relative; /* Necesario para posicionar el dropdown */
+}
+
+/* MENÚ DESPLEGABLE HACIA ABAJO */
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 100%; /* Justo debajo del botón del usuario */
+  right: 0;
+  background-color: var(--color-secundario);
+  /*border: 1px solid var(--color-borde);*/
+  box-shadow: 0 2px 6px #0002;
+  padding: 0.5rem 0;
+  z-index: 1000;
+  min-width: 180px;
+}
+
+.dropdown-menu li {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  display: block;
+}
+
+.dropdown-menu li:hover {
+  background-color: var(--csolor-acento-claro);
+}
+
 
 /* MENÚ RESPONSIVO */
 @media (max-width: 768px) {

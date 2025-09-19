@@ -10,7 +10,7 @@
   display: flex !important;
   align-items: center !important;
   gap: 8px !important;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
 }
 .facebook-btn:hover {
   background-color: #365899 !important;
