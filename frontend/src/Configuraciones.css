@@ -1,0 +1,34 @@
+.configuraciones-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.configuraciones-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2d3a4a;
+}
+
+.config-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.config-section:last-child {
+  border-bottom: none;
+}
+
+.config-section h2 {
+  color: #3b4a5a;
+  margin-bottom: 0.5rem;
+}
+
+.config-section p {
+  color: #5a6a7a;
+  margin: 0;
+}

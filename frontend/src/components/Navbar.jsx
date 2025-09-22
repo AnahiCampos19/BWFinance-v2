@@ -81,11 +81,11 @@ export const Navbar = () => {
                 </button>
                 {menuAbierto === "user" && (
                   <ul className="dropdown-menu">
-                    <li>
-                      <Link to="/perfil" onClick={() => setMenuAbierto(false)}>
-                        Configuración
-                      </Link>
-                    </li>
+<li>
+  <Link to="/configuraciones" onClick={() => setMenuAbierto(false)}>
+    Configuraciones
+  </Link>
+</li>
                     <li>
                       <button className="logout-btn" onClick={handleLogout}>
                         <FiLogOut style={{ marginRight: "0.5rem", verticalAlign: "middle" }} />

@@ -16,6 +16,7 @@ import LoginScreen from "./components/LoginScreen";
 import './App.css';
 
 import WeatherInfo from './components/WeatherInfo';
+import Configuraciones from './components/Configuraciones';
 import { useLocation } from 'react-router-dom';
 
 // Importa Navbar y Footer
@@ -42,6 +43,7 @@ function App() {
           <Route path="/tareas-habitos" element={<TareasHabitos />} />
           <Route path="/eliminaciondatos" element={<EliminacionDatos />} />
           <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
+          <Route path="/configuraciones" element={<Configuraciones />} />
           <Route path="*" element={<h2>{ERROR_MESSAGE}</h2>} />
         </Routes>
       </main>
